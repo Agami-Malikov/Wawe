@@ -9,7 +9,7 @@ html{
 }
 
 ul,
-ol {
+ol{
   padding: 0;
 }
 
@@ -28,15 +28,15 @@ figure,
 figcaption,
 blockquote,
 dl,
-dd {
+dd{
   margin: 0;
 }
 
-ul[class] {
+ul[class]{
   list-style: none;
 }
 
-img {
+img{
   max-width: 100%;
   display: block;
 }
@@ -44,6 +44,6 @@ img {
 input,
 button,
 textarea,
-select {
+select{
   font: inherit;
 }

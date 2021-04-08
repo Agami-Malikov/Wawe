@@ -180,6 +180,7 @@ address{
   font-size: 24px;
   color: #000000;
   margin-top: auto;
+  margin-bottom: auto;
 }
 
 .header__title span{
@@ -197,7 +198,7 @@ address{
   height: 68px;
   width: 20px;
   margin-top: auto;
-  margin-bottom: 95px;
+  margin-bottom: auto;
 }
 
 .about{
@@ -281,7 +282,7 @@ address{
 }
 
 .wawes__item{
-  width: 293px;
+  max-width: 293px;
 }
 
 .wawes__line{
@@ -346,10 +347,6 @@ address{
   height: 100%;
 }
 
-.gallery{
-  padding: 0 0 200px;
-}
-
 .gallery__title{
   margin-bottom: 205px;
 }
@@ -385,7 +382,7 @@ address{
 .gallery__photos{
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -20px 10px;
+  margin-bottom: 10px;
 }
 
 .gallery__photos a{
@@ -393,11 +390,11 @@ address{
 }
 
 .gallery__photo{
-  margin: 0 20px;
+  margin: 0 10px;
+  margin-bottom: 40px;
 }
 
 .gallery__photo a{
-  margin-bottom: 40px;
   position: relative;
   display: block;
 }
@@ -705,6 +702,7 @@ address{
   min-height: 170px;
   resize: none;
 }
+
 .contact__message::placeholder{
   max-width: 260px;
 }
@@ -785,7 +783,8 @@ address{
   .title,
   .blockquote,
   .contact__bg,
-  .bonus__about{
+  .bonus__about,
+  .video{
     margin-bottom: 50px;
   }
 
@@ -817,25 +816,17 @@ address{
     height: 80%;
   }
 
-  .gallery__photo{
-    margin: 0 10px;
-  }
-
   .gallery__photo img{
     width: 300px;
     height: 300px;
   }
 
-  .gallery__photo a{
+  .gallery__photo{
     margin-bottom: 20px;
   }
 
   .gallery__more{
     margin: 0 auto 50px;
-  }
-
-  .statistic{
-    padding: 50px 0 0;
   }
 
   .team__items li,
@@ -845,7 +836,7 @@ address{
 
   .contact__form{
     min-width: unset;
-    width: 50%;
+    max-width: 50%;
   }
 }
 
@@ -865,7 +856,7 @@ address{
   }
 
   .about__title{
-    font-size: 36px;
+    font-size: 32px;
   }
 
   .bonus__item{
@@ -874,6 +865,10 @@ address{
 
   .bonus__subtitle{
     font-size: 18px;
+  }
+
+  .wawes__text{
+    max-width: 50%;
   }
 
   .hight__img{
@@ -905,8 +900,13 @@ address{
   }
 
   .gallery__photos{
-    max-width: 680px;
-    margin: 0 auto;
+    max-width: 960px;
+    margin: 0 auto 30px;
+}
+
+  .video,
+  .blog__item{
+    max-height: 400px;
   }
 
   .blog__inner{
@@ -928,6 +928,7 @@ address{
 
   .contact__items{
     padding: 63px 100px 71px 52px;
+    max-width: 50%;
   }
 }
 
@@ -938,11 +939,11 @@ address{
   }
 
   .title{
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .title::after{
-    font-size: 32px;
+    font-size: 28px;
   }
 
   .header__menu{
@@ -993,7 +994,6 @@ address{
   .menu__link{
     display: block;
     padding: 15px 0;
-    color: #01353E;
   }
 
   .header__title{
@@ -1040,6 +1040,10 @@ address{
     max-width: 100px;
   }
 
+  .bonus__inner{
+    display: block;
+  }
+
   .wawes__text{
     max-width: 500px;
     text-align: center;
@@ -1049,17 +1053,39 @@ address{
     max-width: 500px;
   }
 
+  .gallery__list{
+    justify-content: unset;
+    overflow-x: scroll;
+  }
+  
+  .gallery__list::-webkit-scrollbar{
+    height: 12px;
+  }
+  
+  .gallery__list::-webkit-scrollbar-thumb{
+    background-color: #01353E;
+    border-radius: 20px;
+  }
+  
+  .gallery__list::-webkit-scrollbar-thumb:hover{
+    background-color: #00B2A0;
+  }
+
+  .gallery__photos{
+    max-width: 640px;
+  }
+
+  .gallery__more{
+    margin-bottom: 60px;
+  }
+
   .blockquote{
     font-size: 24px;
+    padding: 35px 10px;
   }
 
   .blockquote__author{
     font-size: 18px;
-  }
-
-  .video,
-  .blog__item{
-    min-height: 100vh;
   }
 
   .statistic__item:not(:last-child){
@@ -1080,13 +1106,17 @@ address{
     margin-bottom: 20px;
   }
 
+  .team__items li{
+    margin-right: 0;
+  }
+
   .price__items{
     display: block;
   }
 
   .price__item{
     margin: 0 auto 20px;
-    width: 300px;
+    max-width: 50%;
   }
 
   .contact__inner{
@@ -1102,6 +1132,7 @@ address{
   .contact__items{
     padding: 20px 0;
     font-size: 18px;
+    margin: 0 auto;
   }
   
   .contact__item{
@@ -1112,7 +1143,15 @@ address{
 
   .contact__item:not(:last-child){
     margin-bottom: 25px;
-}
+  }
+
+  .contact__message{
+    margin: 40px 0 20px;
+  }
+
+  .contact__btn{
+    margin-bottom: 40px;
+  }
 
   .contact__bg{
     display: none;
@@ -1128,6 +1167,14 @@ address{
 }
 
 @media (max-width: 440px){
+  .title,
+  .blockquote,
+  .contact__bg,
+  .bonus__about,
+  .video{
+    margin-bottom: 35px;
+  }
+
   .about,
   .bonus,
   .hight,
@@ -1138,6 +1185,7 @@ address{
   .contact{
     padding: 25px 0;
   }
+
   .header__title{
     font-size: 12px;
   }
@@ -1147,15 +1195,29 @@ address{
   }
 
   .title{
-    font-size: 20px;
+    font-size: 16px;
   }
 
-  .wawes__item{
+  .wawes{
     width: 200px;
+    margin: 0 auto 20px;
   }
 
   .gallery__item:not(:last-child){
     margin-right: 10px;
+  }
+
+  .gallery__photos{
+    max-width: 320px;
+  }
+
+  .blockquote__author{
+    margin-top: 5%;
+  }
+
+  .video,
+  .blog__item{
+    max-height: 300px;
   }
 
   .statistic{
@@ -1182,6 +1244,19 @@ address{
   .slick-dots button{
     width: 9px;
     height: 9px;
+  }
+
+  .price__item{
+    max-width: 100%;
+  }
+  
+  .contact__form,
+  .contact__items{
+    max-width: 100%;
+  }
+
+  .footer{
+    padding: 30px;
   }
 }
 
