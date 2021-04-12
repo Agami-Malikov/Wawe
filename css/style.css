@@ -80,7 +80,8 @@ address{
 .btn:focus,
 .menu__link:focus,
 .contact__item a:focus,
-.gallery__button:focus{
+.gallery__button:focus,
+.social a:focus{
   outline-color: #00B2A0;
   background-color: #00B2A0;
   color: #FFFFFF;
@@ -103,12 +104,18 @@ address{
 }
 
 .header__inner{
-  position: fixed;
+  position: relative;
   z-index: 1;
   width: 100%;
 }
 
-.header__inner::before{
+.header__inner--fixed{
+  position: fixed;
+  animation-name: header--fixed;
+  animation-duration: 1s;
+}
+
+.header__inner--fixed::before{
   content: "";
   position: absolute;
   background-color: #000000;
@@ -118,6 +125,20 @@ address{
   top: 0;
   bottom: 0;
   z-index: -1;
+}
+
+@keyframes header--fixed{
+  0%{
+    top: -100px;
+  }
+
+  100%{
+    top: 0;
+  }
+}
+
+.header__inner.header__inner--fixed .header__menu{
+  padding: 0;
 }
 
 .header__menu{
@@ -256,6 +277,9 @@ address{
 }
 
 .bonus__subtitle::before{
+  content: "";
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
   position: absolute;
   top: 0;
   left: -60px;
@@ -264,15 +288,15 @@ address{
 }
 
 .bonus__subtitle--sun::before{
-  content: url("../img/page-icon1.svg");
+  background-image: url("../img/page-icon1.svg");
 }
 
 .bonus__subtitle--plane::before{
-  content: url("../img/page-icon2.svg");
+  background-image: url("../img/page-icon2.svg");
 }
 
 .bonus__subtitle--train::before{
-  content: url("../img/page-icon3.svg");
+  background-image: url("../img/page-icon3.svg");
 }
 
 .bonus__inner{
@@ -283,6 +307,10 @@ address{
 
 .wawes__item{
   max-width: 293px;
+}
+
+.wawes{
+  width: 350px;
 }
 
 .wawes__line{
@@ -431,7 +459,7 @@ address{
   font-weight: 400;
   font-size: 36px;
   line-height: 1.1;
-  padding: 67px 20px;
+  padding: 73px 20px;
   text-align: center;
   background-color: #F8F8F8;
   margin-bottom: 200px;
@@ -835,8 +863,7 @@ address{
   }
 
   .contact__form{
-    min-width: unset;
-    max-width: 50%;
+    min-width: 450px;
   }
 }
 
@@ -871,23 +898,13 @@ address{
     max-width: 50%;
   }
 
-  .hight__img{
-    display: none;
-  }
-
   .hight__content{
     padding: 0;
-    max-width: 500px;
-    margin: 0 auto;
-    text-align: center;
-  }
-
-  .hight__title{
-    text-align: center;
+    max-width: 360px;
   }
 
   .wawes{
-    margin-bottom: 30px;
+    margin: 0 auto 30px;
   }
 
   .gallery__list{
@@ -926,6 +943,10 @@ address{
     font-size: 24px;
   }
 
+  .contact__bg{
+    height: unset;
+  }
+
   .contact__items{
     padding: 63px 100px 71px 52px;
     max-width: 50%;
@@ -933,6 +954,17 @@ address{
 }
 
 @media (max-width: 768px){
+  .about,
+  .bonus,
+  .hight,
+  .gallery,
+  .blog,
+  .team,
+  .price,
+  .contact{
+    padding: 50px 0;
+  }
+
   .btn{
     padding: 18px 45px;
     margin: 0 auto 20px;
@@ -943,7 +975,7 @@ address{
   }
 
   .title::after{
-    font-size: 28px;
+    font-size: 32px;
   }
 
   .header__menu{
@@ -976,13 +1008,13 @@ address{
 
   .menu__list{
     position: absolute;
-    left: -10px;
-    right: -10px;
+    left: 0px;
+    right: 0px;
     top: 0px;
     background-color: #00B2A0;
     display: block;
     text-align: center;
-    padding: 100px 0 15px;
+    padding: 50px 0 15px;
     transform: translateY(-200%);
     transition: all 0.8s;
   }
@@ -1049,6 +1081,21 @@ address{
     text-align: center;
   }
 
+  .hight__img{
+    display: none;
+  }
+
+  .hight__content{
+    padding: 0;
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .hight__title{
+    text-align: center;
+  }
+
   .hight__text{
     max-width: 500px;
   }
@@ -1059,7 +1106,7 @@ address{
   }
   
   .gallery__list::-webkit-scrollbar{
-    height: 12px;
+    height: 5px;
   }
   
   .gallery__list::-webkit-scrollbar-thumb{
@@ -1130,15 +1177,24 @@ address{
   }
 
   .contact__items{
-    padding: 20px 0;
+    padding: 30px 0;
     font-size: 18px;
     margin: 0 auto;
+    max-width: 500px;
   }
-  
+
   .contact__item{
     max-width: 500px;
     text-align: center;
     margin: 0 auto;
+  }
+  
+  .contact__item a{
+    margin: 0 auto;
+  }
+
+  .contact__form{
+    min-width: unset;
   }
 
   .contact__item:not(:last-child){
@@ -1195,12 +1251,26 @@ address{
   }
 
   .title{
+    font-size: 22px;
+  }
+
+  .bonus__subtitle{
     font-size: 16px;
+  }
+
+  .bonus__subtitle::before{
+    background-size: 30px 50px;
+    left: -40px;
   }
 
   .wawes{
     width: 200px;
     margin: 0 auto 20px;
+  }
+
+  .wawes span{
+    font-size: 18px;
+    bottom: 8px;
   }
 
   .gallery__item:not(:last-child){
